@@ -3,8 +3,8 @@ import json
 import telebot
 import requests
 
-TG_TOKEN = '6487759381:AAHrVsdEt-T3Rx88trXnmcEsB_i5K3I83Ow'
-OPEN_WEATHER_KEY = 'b09cf2b21774d73ac3d4dfea241ffdfb'
+TG_TOKEN = 'TOKEN'
+OPEN_WEATHER_KEY = 'TOKEN'
 
 WELCOME_STR = 'Привет, я бот, сообщающий текущую погоду!'
 WEATHER_STR = 'Напечатай название своего города.'
