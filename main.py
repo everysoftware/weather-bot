@@ -3,8 +3,8 @@ import json
 import telebot
 import requests
 
-TG_TOKEN = 'TG_TOKEN'
-OPEN_WEATHER_KEY = 'OPEN_WEATHER_TOKEN'
+TG_TOKEN = '6487759381:AAHrVsdEt-T3Rx88trXnmcEsB_i5K3I83Ow'
+OPEN_WEATHER_KEY = 'b09cf2b21774d73ac3d4dfea241ffdfb'
 
 WELCOME_STR = 'Привет, я бот, сообщающий текущую погоду!'
 WEATHER_STR = 'Напечатай название своего города.'
@@ -21,7 +21,7 @@ bot = telebot.TeleBot(TG_TOKEN)
 
 @bot.message_handler(commands=['start'])
 def start_handler(msg):
-    markup = telebot.types.ReplyKeyboardMarkup()
+    markup = telebot.types.ReplyKeyboardMarkup(one_time_keyboard=True)
     markup.add(telebot.types.KeyboardButton('Узнать погоду'))
     bot.send_message(msg.chat.id, WELCOME_STR, reply_markup=markup)
     bot.register_next_step_handler(msg, menu_callback)
