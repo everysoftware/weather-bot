@@ -72,6 +72,11 @@ def parse_json(city, response):
                            )
 
 
+@bot.message_handler(commands=['author'])
+async def author_handler(msg):
+    await bot.send_message(msg.chat.id, 'Автор бота: @ivanstasevich')
+
+
 @bot.message_handler()
 async def get_weather(msg):
     city = msg.text.strip().lower()
@@ -79,11 +84,6 @@ async def get_weather(msg):
                             f'&units=metric')
     text = parse_json(city, response) if response.ok else NOT_FOUND_STR
     await bot.reply_to(msg, text, parse_mode='html')
-
-
-@bot.message_handler(commands=['author'])
-async def author_handler(msg):
-    await bot.send_message(msg.chat.id, 'Автор бота: @ivanstasevich')
 
 
 def main():
