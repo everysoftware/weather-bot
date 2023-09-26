@@ -14,7 +14,7 @@ WEATHER_STR = 'Напечатай название своего города.'
 INFO_STR = "<b>Погода ({})</b>\n\n" +\
            "Температура: {}°C {}\n" +\
            "Ощущается как: {}°C {}\n" +\
-           "Давление: {} мм. рт. ст.\n" +\
+           "Давление: {} гПа\n" +\
            "Влажность: {}%\n"
 NOT_FOUND_STR = 'Город не найден!'
 UNKNOWN_COMMAND_STR = 'Неизвестная команда.'
@@ -76,7 +76,7 @@ def parse_json(city, response):
 async def get_weather(msg):
     city = msg.text.strip().lower()
     response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={city}&APPID={config.OPEN_WEATHER_KEY}'
-                            f'&unitsf=metric')
+                            f'&units=metric')
     text = parse_json(city, response) if response.ok else NOT_FOUND_STR
     await bot.reply_to(msg, text, parse_mode='html')
 

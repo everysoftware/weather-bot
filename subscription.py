@@ -8,7 +8,6 @@ import config
 from app import bot, db
 
 
-@bot.message_handler(commands=['subscribe'])
 async def main_handler(msg):
     data = await db.get_payment_status(msg.chat.id)
     bought, label = data[0][0], data[0][1]

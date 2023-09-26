@@ -1,9 +1,8 @@
 from yoomoney import Authorize
 
-# https://t.me/ivans_weather_bot
 Authorize(
-    client_id='75F5E59960114B23ED47E367F3CEE4772256DD9B317566E3067308D0D3AC8A11',
-    redirect_uri='https://t.me/is_market_bot',
+    client_id='YOUR_CLIENT_ID',
+    redirect_uri='YOUR_TG_CHANNEL_LINK',
     scope=[
         'account-info',
         'operation-history',
