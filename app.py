@@ -13,7 +13,7 @@ WEATHER_STR = 'Напечатай название своего города.'
 INFO_STR = "<b>Погода ({})</b>\n\n" + \
            "Температура: {}°C {}\n" + \
            "Ощущается как: {}°C {}\n" + \
-           "Давление: {} гПа\n" + \
+           "Давление: {} мм. рт. ст\n" + \
            "Влажность: {}%\n"
 NOT_FOUND_STR = 'Город не найден!'
 UNKNOWN_COMMAND_STR = 'Неизвестная команда.'
@@ -82,7 +82,7 @@ def parse_json(response):
     return INFO_STR.format(data['name'],
                            data['main']['temp'], get_temp_emoji(data['main']['temp']),
                            data['main']['feels_like'], get_temp_emoji(data['main']['feels_like']),
-                           data['main']['pressure'],
+                           data['main']['pressure'] * 0.75,
                            data['main']['humidity']
                            )
 
